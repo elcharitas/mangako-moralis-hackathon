@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MangaKo | NFT Marketplace for Mangas</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="MangaKo - NFT Marketplace for Mangas">
+    <meta name="keywords" content="moralis, marketplace, manga, creative, clean">
+    <meta name="author" content="Danijel, elcharitas, Daniel Williams">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="" />
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <!-- Vendor Styles including: Font Icons, Plugins, etc.-->
+    <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css"/>
+    <link rel="stylesheet" media="screen" href="vendor/tiny-slider/dist/tiny-slider.css"/>
+    <link rel="stylesheet" media="screen" href="vendor/drift-zoom/dist/drift-basic.min.css"/>
+    <link rel="stylesheet" media="screen" href="vendor/lightgallery.js/dist/css/lightgallery.min.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="css/theme.min.css">
+    <!-- Google Tag Manager-->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WKV3GT5');
+    </script>
+  </head>
+  <!-- Body-->
+  <body class="handheld-toolbar-enabled">
+    <main class="page-wrapper">
+      <!-- Navbar Electronics Store-->
+      <header id="header" class="shadow-sm">
+        <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+        <div class="navbar-sticky bg-light">
+          <div class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+              <a class="navbar-brand d-none d-sm-block me-5 flex-shrink-0" href="/">
+                <img src="img/logo-dark.png" width="142" alt="MangaKo">
+              </a>
+              <a class="navbar-brand d-sm-none me-5" href="/">
+                <img src="img/logo-icon.png" width="74" alt="MangaKo">
+              </a>
+              <!-- Search-->
+              <div class="input-group d-none d-lg-flex flex-nowrap mx-5">
+                <i class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                <input class="form-control rounded-start w-100" type="text" placeholder="Search for Mangas by Keyword">
+                <select class="form-select flex-shrink-0 bg-darker text-white text-center" style="width: 10.5rem;">
+                  <option>Genres</option>
+                  <option>Action</option>
+                  <option>Sci-Fi</option>
+                  <option>Fantasy</option>
+                </select>
+              </div>
+              <!-- Toolbar-->
+              <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-tool navbar-stuck-toggler" href="#"><span class="navbar-tool-tooltip">Toggle menu</span>
+                  <div class="navbar-tool-icon-box"><i class="navbar-tool-icon fas fa-menu"></i></div></a><a class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2" href="#signin-modal" data-bs-toggle="modal">
+                  <div class="navbar-tool-icon-box"><i class="navbar-tool-icon fas fa-user"></i></div>
+                  <div class="navbar-tool-text ms-n3 text-center">
+                    <button class="btn btn-sm btn-success">
+                      <small class="d-block">
+                        Hello, {{Sign in}}
+                        <br/>
+                        <b>Connect Wallet</b>
+                      </small>
+                    </button>
+                  </div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <template id="page-template-home">
+      <!-- Hero (Banners + Slider)-->
+        <section class="bg-secondary py-4 pt-md-5">
+          <div class="container py-xl-2 align-items-center">
+            <div class="row">
+              <!-- Slider     -->
+              <div class="col-xl-6 pt-xl-4 order-xl-2 mt-3" style="background-image: url(img/hero-image.png);background-size: contain; background-repeat: no-repeat;">
+                &nbsp;
+              </div>
+              <!-- Banner group-->
+              <div class="col-xl-3 order-xl-1 pt-4 mt-3 mt-xl-n4 pt-xl-0">
+                <div class="table-responsive" data-simplebar>
+                  <div class="d-flex d-xl-block"><a class="d-flex align-items-center bg-faded-info rounded-3 pt-2 ps-2 mb-4 me-4 me-xl-0" href="#" style="min-width: 16rem;"><img src="img/hero-side-01.png" width="125" alt="Banner">
+                      <div class="py-4 px-2">
+                        <h5 class="mb-2"><span class="fw-ligt">#1 Stop for</span><br>Mangas</h5>
+                        <button class="btn btn-info btn-sm">Explore Now<i class="fas fa-arrow-right fs-xs ms-1"></i></button>
+                      </div></a>
+                      <a class="d-flex align-items-center bg-faded-success rounded-3 pt-2 ps-2 mb-4 me-4 me-xl-0" href="#" style="min-width: 16rem;"><img src="img/hero-side-02.png" width="125" alt="Banner">
+                      <div class="py-4 px-2">
+                        <h5 class="mb-2"><span class="fw-light">Top Rated</span><br>Mangas<br></h5>
+                        <button class="btn btn-warning btn-sm">View Listing<i class="fas fa-arrow-right fs-xs ms-1"></i></button>
+                      </div></a></div>
+                </div>
+              </div>
+              <!-- Banner group-->
+              <div class="col-xl-3 order-xl-3 pt-4 mt-3 mt-xl-n4 pt-xl-0">
+                <div class="table-responsive" data-simplebar>
+                  <div class="d-flex d-xl-block">
+                    <a class="d-flex align-items-center bg-faded-success rounded-3 pt-2 ps-2 mb-4 me-4 me-xl-0" href="#" style="min-width: 16rem;"><img src="img/hero-side-02.png" width="125" alt="Banner">
+                      <div class="py-4 px-2">
+                        <h5 class="mb-2"><span class="fw-light">Top Rated</span><br>Mangas<br></h5>
+                        <button class="btn btn-warning btn-sm">View Collection<i class="fas fa-arrow-right fs-xs ms-1"></i></button>
+                      </div></a><a class="d-flex align-items-center bg-faded-success rounded-3 pt-2 ps-2 mb-4" href="#" style="min-width: 16rem;"><img src="img/hero-side-03.png" width="125" alt="Banner">
+                      <div class="py-4 px-2">
+                        <h5 class="mb-2"><span class="fw-light">Catch Big</span><br>Deals <span class="fw-light">on</span><br>Earbuds</h5>
+                        <div class="text-success fs-sm">Shop now<i class="fas fa-arrow-right fs-xs ms-1"></i></div>
+                      </div></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Mangas grid (Trending products)-->
+        <section class="container pt-5">
+          <!-- Heading-->
+          <div class="d-flex flex-wrap justify-content-between align-items-center pt-1 border-bottom pb-4 mb-4">
+            <h2 class="h3 mb-0 pt-3 me-2">Trending Mangas</h2>
+            <div class="pt-3"><a class="btn btn-outline-success btn-sm" href="#">View More<i class="fas fa-arrow-right ms-1 me-n1"></i></a></div>
+          </div>
+          <!-- Grid-->
+          <div class="row pt-2 mx-n2">
+            <!-- Manga-->
+            <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+              <div class="card product-card">
+                <div class="product-card-actions d-flex align-items-center"><a class="btn-action nav-link-style me-2" href="#"><i class="fas fa-compare me-1"></i>Compare</a>
+                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="fas fa-heart"></i></button>
+                </div><a class="card-img-top d-block overflow-hidden" href="#"><img src="img/coral-main.png" alt="Manga"></a>
+                <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Action</a>
+                  <h3 class="product-title fs-sm"><a href="#">Lorem Ipsum</a></h3>
+                  <div class="d-flex justify-content-between">
+                    <div class="product-price"><span class="text-accent">$198.<small>00</small></span></div>
+                    <div class="star-rating"><i class="star-rating-icon fas fa-star-filled active"></i><i class="star-rating-icon fas fa-star-filled active"></i><i class="star-rating-icon fas fa-star-filled active"></i><i class="star-rating-icon fas fa-star-filled active"></i><i class="star-rating-icon fas fa-star-filled active"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body card-body-hidden">
+                  <button class="btn btn-primary btn-sm d-block w-100 mb-2" type="button"><i class="fas fa-cart fs-sm me-1"></i>Add to Cart</button>
+                  <div class="text-center"><a class="nav-link-style fs-ms" href="#quick-view-electro" data-bs-toggle="modal"><i class="fas fa-eye align-middle me-1"></i>Quick view</a></div>
+                </div>
+              </div>
+              <hr class="d-sm-none">
+            </div>
+          </div>
+        </section>
+        <!-- Promo banner-->
+        <section class="container mt-4 mb-grid-gutter">
+          <div class="bg-faded-danger rounded-3 py-4">
+            <div class="row align-items-center">
+              <div class="col-md-5">
+                <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Most Read</span>
+                  <h2 class="mb-1">Kimetsu no Yaiba</h2>
+                  <p class="text-body fw-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, possimus!</p>
+                  <a class="btn btn-accent" href="#">View offers<i class="fas fa-arrow-right fs-ms ms-1"></i></a>
+                </div>
+              </div>
+              <div class="col-md-7"><img src="img/coral-main.png" alt="..."></div>
+            </div>
+          </div>
+        </section>
+        <!-- Manga widgets-->
+        <section class="container pb-4 pb-md-5">
+          <div class="row">
+            <!-- Bestsellers-->
+            <div class="col-md-4 col-sm-6 mb-2 py-3">
+              <div class="widget">
+                <h3 class="widget-title">Bestsellers</h3>
+                <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="#"><img src="img/coral-main.png" width="64" alt="Manga"></a>
+                  <div class="ps-2">
+                    <h6 class="widget-product-title"><a href="#">Lorem ipsum dolor sit amet</a></h6>
+                    <div class="widget-product-meta"><span class="text-accent">$259.<small>00</small></span></div>
+                  </div>
+                </div>
+                <p class="mb-0">...</p><a class="fs-sm" href="#">View more<i class="fas fa-arrow-right fs-xs ms-1"></i></a>
+              </div>
+            </div>
+            <!-- Bestsellers-->
+            <div class="col-md-4 col-sm-6 mb-2 py-3">
+              <div class="widget">
+                <h3 class="widget-title">Bestsellers</h3>
+                <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="#"><img src="img/coral-main.png" width="64" alt="Manga"></a>
+                  <div class="ps-2">
+                    <h6 class="widget-product-title"><a href="#">Lorem ipsum dolor sit amet</a></h6>
+                    <div class="widget-product-meta"><span class="text-accent">$259.<small>00</small></span></div>
+                  </div>
+                </div>
+                <p class="mb-0">...</p><a class="fs-sm" href="#">View more<i class="fas fa-arrow-right fs-xs ms-1"></i></a>
+              </div>
+            </div>
+            <!-- Bestsellers-->
+            <div class="col-md-4 col-sm-6 mb-2 py-3">
+              <div class="widget">
+                <h3 class="widget-title">Bestsellers</h3>
+                <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="#"><img src="img/coral-main.png" width="64" alt="Manga"></a>
+                  <div class="ps-2">
+                    <h6 class="widget-product-title"><a href="#">Lorem ipsum dolor sit amet</a></h6>
+                    <div class="widget-product-meta"><span class="text-accent">$259.<small>00</small></span></div>
+                  </div>
+                </div>
+                <p class="mb-0">...</p><a class="fs-sm" href="#">View more<i class="fas fa-arrow-right fs-xs ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </template>
+      <template id="page-template-account">
+
+      </template>
+      <template id="page-template-error">
+        <div class="container py-5 mb-lg-1">
+          <div class="row justify-content-center pt-lg-4 text-center">
+            <div class="col-lg-5 col-md-7 col-sm-9">
+              <h1 class="h3">404 error</h1>
+              <h3 class="h5 fw-normal mb-4">We can't seem to find the page you are looking for.</h3>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-10">
+              <div class="row">
+                <div class="col-12 mb-3">
+                  <a class="card h-100 border-0 shadow-sm text-center" href="/">
+                    <div class="card-body">
+                      <div class="d-f align-items-center">
+                        <i class="text-primary h4 mb-0"></i>
+                        <div class="ps-3">
+                          <span class="text-muted fs-ms">Return to homepage</span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <div id="content">
+      </div>
+    </main>
+    <!-- Footer-->
+    <footer class="footer pb-0 bg-dark">
+      <div class="bg-darker">
+        <div class="py-4 px-4 fs-xs text-light opacity-50 text-center">
+          &nbsp; © All rights reserved. Made by <a class="text-light" href="https://createx.studio/" target="_blank" rel="noopener"><a href="https://github.com/Danijel-Enoch">Danijel</a>, <a href="https://github.com/elcharitas">Elcharitas</a>, and <a href="#">Daniel Williams</a> and built on the wonderful technology called <a href="https://moralis.io">Moralis</a>
+        </div>
+      </div>
+    </footer>
+    <!-- Back To Top Button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon fas fa-arrow-up">   </i></a>
+    <!-- Vendor scrits: js libraries and plugins-->
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+    <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="vendor/drift-zoom/dist/Drift.min.js"></script>
+    <script src="vendor/lightgallery.js/dist/js/lightgallery.min.js"></script>
+    <script src="vendor/lg-video.js/dist/lg-video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script type="module">
+      import { Router, ContainerRouteRenderer } from "https://unpkg.com/route-it@1.1.0/dist/index.js";
+
+      const parent = document.querySelector("#content");
+      const container = new ContainerRouteRenderer(parent);
+
+      const sharedData = {
+
+      };
+
+      const sharedEvents = {
+        connect_wallet(){
+          alert()
+        },
+        change_blockchain(id){
+
+        }
+      }
+
+      function createLink(router, a) {
+        a.addEventListener("click", ev => {
+          ev.preventDefault();
+          router.navigate(a.getAttribute("href"));
+        });
+      }
+
+      function attachEvent(el){
+        const event = el.id;
+        
+      }
+
+      function compile(templateId, data, router){
+        // boot the template
+        const template = document.getElementById(templateId);
+        if(!template) return getErrorPage({templateId});
+
+        // extract content and render
+        template.content.innerHTML = Handlebars.compile(template.innerHTML)(data);
+
+        // parse the final node before returning
+        const finalNode = template.content.cloneNode(true);
+        finalNode.querySelectorAll('a').forEach(createLink.bind({}, router));
+        finalNode.querySelectorAll('.shared-event').forEach(attachEvent);
+        return finalNode;
+      }
+
+      function getErrorPage(data){
+        return compile('page-template-error', data);
+      }
+
+      class Routes {
+        resolve(lastRoute, currentRoute, router) {
+          const route = currentRoute.replace(/\//, 'page-template-');
+          const routeId = route === 'page-template-' ? route + 'home': route;
+          return compile(routeId, sharedData, router);
+        }
+      }
+
+      new Router(new Routes(), container).run();
+    </script>
+  </body>
+</html>

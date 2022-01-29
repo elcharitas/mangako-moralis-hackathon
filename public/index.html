@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>MangaKo | NFT Marketplace for Mangas</title>
+    <title> MangaKo | NFT Marketplace for Mangas </title>
     <!-- SEO Meta Tags-->
     <meta name="description" content="MangaKo - NFT Marketplace for Mangas">
     <meta name="keywords" content="moralis, marketplace, manga, creative, clean">
@@ -26,11 +26,12 @@
   <!-- Body-->
   <body class="handheld-toolbar-enabled">
     <main id="content" class="page-wrapper">
+      
     </main>
     <!-- Footer-->
     <footer class="footer pb-0 bg-dark">
       <div class="bg-darker">
-        <div class="py-4 px-4 fs-xs text-light opacity-50 text-center">
+        <div class="py-4 px-4 fs-xs text-light opafas faty-50 text-center">
           &nbsp; © All rights reserved. Made by <a class="text-light" href="https://createx.studio/" target="_blank" rel="noopener"><a href="https://github.com/Danijel-Enoch">Danijel</a>, <a href="https://github.com/elcharitas">Elcharitas</a>, and <a href="#">Daniel Williams</a> and built on the wonderful technology called <a href="https://moralis.io">Moralis</a>
         </div>
       </div>
@@ -58,7 +59,7 @@
               <!-- Search-->
               <div class="input-group d-none d-lg-flex flex-nowrap mx-5">
                 <i class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-                <input class="form-control rounded-start w-100" type="text" placeholder="Search for Mangas by Keyword">
+                <input class="form-control rounded-start w-100" type="text" placeholder="Search MangaKo">
                 <select class="form-select flex-shrink-0 bg-darker text-white text-center" style="width: 10.5rem;">
                   <option>Genres</option>
                   <option>Action</option>
@@ -76,11 +77,10 @@
                   <div class="navbar-tool-icon-box"><i class="navbar-tool-icon fas fa-menu"></i></div>
                 </a>
                 <a on-click="['connect_wallet']" class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2">
-                  <div class="navbar-tool-icon-box"><i class="navbar-tool-icon fas fa-user"></i></div>
                   <div class="navbar-tool-text ms-n3 text-center">
                     <button class="btn btn-sm btn-success">
                       <small class="d-block">
-                        Hello, {{sign_in}}!
+                        <i class="fas fa-user-fas farcle"></i> Hello, {{sign_in}}!
                         <br/>
                         <b>Connect Wallet</b>
                       </small>
@@ -93,13 +93,13 @@
         </div>
       </header>
     </template>
-    <template id="page-template-home">
+    <template id="page-template-home" title="Home">
     <!-- Hero (Banners + Slider)-->
       <section class="bg-secondary py-4 pt-md-5">
         <div class="container py-xl-2 align-items-center">
           <div class="row">
             <!-- Slider     -->
-            <div class="col-xl-6 pt-xl-4 order-xl-2 mt-3" style="background-image: url(img/hero-image.png);background-size: contain; background-repeat: no-repeat;">
+            <div class="col-md-6 pt-md-4 order-md-2 mt-3" style="min-height: 200px;background-image: url(img/hero-image.png);background-size: contain; background-repeat: no-repeat;">
               &nbsp;
             </div>
             <!-- Banner group-->
@@ -111,7 +111,7 @@
                       <h5 class="mb-2"><span class="fw-light">Discover</span><br>Mangas</h5>
                       <button class="btn btn-info btn-sm">Listing<i class="fas fa-arrow-right fs-xs ms-1"></i></button>
                     </div></a>
-                    <a class="d-flex align-items-center bg-faded-success rounded-3 pt-2 ps-2 mb-4 me-4 me-xl-0" on-click="['navigate', '/collections']" style="min-width: 16rem;"><img src="img/hero-side-02.png" width="125" alt="Banner">
+                    <a class="d-flex align-items-center bg-faded-success rounded-3 pt-2 ps-2 mb-4 me-4 me-xl-0" on-click="['navigate', '/listing']" style="min-width: 16rem;"><img src="img/hero-side-02.png" width="125" alt="Banner">
                     <div class="py-4 px-2">
                       <h5 class="mb-2"><span class="fw-ligt">Collect</span><br>Mangas<br></h5>
                       <button class="btn btn-warning btn-sm">Explore<i class="fas fa-arrow-right fs-xs ms-1"></i></button>
@@ -119,7 +119,7 @@
               </div>
             </div>
             <!-- Banner group-->
-            <div class="col-xl-3 order-xl-3 pt-4 mt-3 mt-xl-n4 pt-xl-0">
+            <div class="d-none d-md-flex col-xl-3 order-xl-3 pt-4 mt-3 mt-xl-n4 pt-xl-0">
               <div class="table-responsive" data-simplebar>
                 <div class="d-flex d-xl-block">
                   <a class="d-flex align-items-center bg-faded-success rounded-3 pt-2 ps-2 mb-4 me-4 me-xl-0" on-click="['navigate', '/create']" style="min-width: 16rem;"><img src="img/hero-side-02.png" width="125" alt="Banner">
@@ -141,7 +141,7 @@
         <!-- Heading-->
         <div class="d-flex flex-wrap justify-content-between align-items-center pt-1 border-bottom pb-4 mb-4">
           <h2 class="h3 mb-0 pt-3 me-2">Trending <span class="text-success">Mangas</span></h2>
-          <div class="pt-3"><a class="btn btn-outline-success btn-sm" on-click="['navigate', '/trending']">View More<i class="fas fa-arrow-right ms-1 me-n1"></i></a></div>
+          <div class="pt-3"><a class="btn btn-outline-success btn-sm" on-click="['navigate', '/listing?sortBy=trend']">View More<i class="fas fa-arrow-right ms-1 me-n1"></i></a></div>
         </div>
         <!-- Grid-->
         <div class="row pt-2 mx-n2">
@@ -151,13 +151,13 @@
       </section>
       <!-- Promo banner-->
       <section class="container mt-4 mb-grid-gutter">
-        <div class="bg-faded-danger rounded-3 py-4">
+        <div class="bg-faded-success rounded-3 py-4">
           <div class="row align-items-center">
             <div class="col-md-5">
-              <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Most Read</span>
+              <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-info">Most Read</span>
                 <h2 class="mb-1">Kimetsu no Yaiba</h2>
-                <p class="text-body fw-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, possimus!</p>
-                <a class="btn btn-accent" href="#">View offers<i class="fas fa-arrow-right fs-ms ms-1"></i></a>
+                <p class="text-body fw-light">Lorem, ipsum dolor sit amet consectetur adipisifas fang elit. Est, possimus!</p>
+                <a class="btn btn-success" href="#">View offers<i class="fas fa-arrow-right fs-ms ms-1"></i></a>
               </div>
             </div>
             <div class="col-md-7"><img src="img/coral-main.png" alt="..."></div>
@@ -165,54 +165,151 @@
         </div>
       </section>
       <!-- Manga widgets-->
-      <section class="container pb-4 pb-md-5">
+      <section class="container py-4 pb-md-5">
+        <h3 class="widget-title text-center">Top Manga Collections</h3>
         <div class="row">
           <!-- Bestsellers-->
           <div class="col-md-4 col-sm-6 mb-2 py-3">
             <div class="widget">
-              <h3 class="widget-title">Bestsellers</h3>
-              <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="#"><img src="img/coral-main.png" width="64" alt="Manga"></a>
+              <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="#"><img src="img/logo-dark.png" width="64" alt="Manga"></a>
                 <div class="ps-2">
                   <h6 class="widget-product-title"><a href="#">Lorem ipsum dolor sit amet</a></h6>
-                  <div class="widget-product-meta"><span class="text-accent">$259.<small>00</small></span></div>
+                  <div class="widget-product-meta"><span class="text-success">$259.<small>00</small></span></div>
                 </div>
               </div>
-              <p class="mb-0">...</p><a class="fs-sm" href="#">View more<i class="fas fa-arrow-right fs-xs ms-1"></i></a>
             </div>
           </div>
           <!-- Bestsellers-->
           <div class="col-md-4 col-sm-6 mb-2 py-3">
             <div class="widget">
-              <h3 class="widget-title">Bestsellers</h3>
-              <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="#"><img src="img/coral-main.png" width="64" alt="Manga"></a>
+              <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="#"><img src="img/logo-dark.png" width="64" alt="Manga"></a>
                 <div class="ps-2">
                   <h6 class="widget-product-title"><a href="#">Lorem ipsum dolor sit amet</a></h6>
-                  <div class="widget-product-meta"><span class="text-accent">$259.<small>00</small></span></div>
+                  <div class="widget-product-meta"><span class="text-success">$259.<small>00</small></span></div>
                 </div>
               </div>
-              <p class="mb-0">...</p><a class="fs-sm" href="#">View more<i class="fas fa-arrow-right fs-xs ms-1"></i></a>
             </div>
           </div>
           <!-- Bestsellers-->
           <div class="col-md-4 col-sm-6 mb-2 py-3">
             <div class="widget">
-              <h3 class="widget-title">Bestsellers</h3>
-              <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="#"><img src="img/coral-main.png" width="64" alt="Manga"></a>
+              <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="#"><img src="img/logo-dark.png" width="64" alt="Manga"></a>
                 <div class="ps-2">
                   <h6 class="widget-product-title"><a href="#">Lorem ipsum dolor sit amet</a></h6>
-                  <div class="widget-product-meta"><span class="text-accent">$259.<small>00</small></span></div>
+                  <div class="widget-product-meta"><span class="text-success">$259.<small>00</small></span></div>
                 </div>
               </div>
-              <p class="mb-0">...</p><a class="fs-sm" href="#">View more<i class="fas fa-arrow-right fs-xs ms-1"></i></a>
             </div>
           </div>
         </div>
+        <a class="d-block fs-sm text-center" href="#">View more<i class="fas fa-arrow-right fs-xs ms-1"></i></a>
       </section>
+    </template>
+    <template id="page-template-listing" title="Marketplace">
+      {{>page_title}}
+      <div class="container mb-5 pb-3">
+        <div class="bg-light shadow-lg rounded-3 overflow-hidden">
+          <div class="row px-5 pt-5">
+            <!-- Sidebar-->
+            <div class="col-lg-3"></div>
+            <!-- Content-->
+            <section class="col-lg-6 pt-lg-4 pb-4 mb-3">
+              <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
+                <!-- Title-->
+                <div class="d-sm-flex flex-wrap justify-content-between align-items-center border-bottom">
+                  <h2 class="h3 py-2 me-2 text-center text-sm-start">Manga NFTs<span class="badge bg-faded-success fs-sm text-body align-middle ms-2">5</span></h2>
+                  <div class="py-2">
+                    <div class="d-flex flex-nowrap align-items-center pb-3">
+                      <label class="form-label fw-normal text-nowrap mb-0 me-2" for="sorting">Sort by:</label>
+                      <select class="form-select form-select-sm me-2" id="sorting">
+                        <option>Date Created</option>
+                        <option>Name</option>
+                        <option>Price</option>
+                        <option>Trending</option>
+                      </select>
+                      <button class="btn btn-outline-secondary btn-sm px-2" type="button"><i class="fa fa-arrow-up"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-block d-sm-flex align-items-center py-4 border-bottom"><a class="d-block mb-3 mb-sm-0 me-sm-4 ms-sm-0 mx-auto" href="" style="width: 12.5rem;"><img class="rounded-3" src="img/logo-dark.png" alt="MangaKo"></a>
+                  <div class="text-center text-sm-start">
+                    <h3 class="h6 product-title mb-2"><a on-click="['navigate', '/manga']">Flat-line E-Commerce Icons (AI)</a></h3>
+                    <div class="d-inline-block text-success">$18.<small>00</small></div>
+                    <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Sales: <span class="fw-medium">26</span></div>
+                    <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Earnings: <span class="fw-medium">$327.<small>60</small></span></div>
+                    <div class="d-flex justify-content-center justify-content-sm-start pt-3">
+                      <button class="btn bg-faded-success btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Download"><i class="fa fa-download text-success"></i></button>
+                      <button class="btn bg-faded-info btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Edit"><i class="fa fa-edit text-info"></i></button>
+                      <button class="btn bg-faded-danger btn-icon" type="button" data-bs-toggle="tooltip" title="Delete"><i class="fa fa-trash text-danger"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="page-template-create" title="Create Manga NFT">
+      {{>page_title}}
+      <div class="container mb-5 pb-3">
+        <div class="bg-light shadow-lg rounded-3 overflow-hidden">
+          <div class="row px-5 pt-5">
+            <!-- Sidebar-->
+            <div class="col-lg-3"></div>
+            <!-- Content-->
+            <section class="col-lg-6 pt-lg-4 pb-4 mb-3">
+              <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
+                <!-- Title-->
+                <div class="d-sm-flex flex-wrap justify-content-between align-items-center pb-2">
+                  <h2 class="h3 py-2 me-2 text-center text-sm-start">Add New Manga</h2>
+                  <div class="py-2">
+                    <select class="form-select me-2" id="unp-category">
+                      <option>Select Genres</option>
+                    </select>
+                  </div>
+                </div>
+                <form>
+                  <div class="file-drop-area mb-3">
+                    <div class="file-drop-icon fas fa-cloud-upload"></div><span class="file-drop-message">Drag and drop here to upload Manga Preview</span>
+                    <input class="file-drop-input" type="file">
+                    <button class="file-drop-btn btn btn-primary btn-sm mb-2" type="button">Or select file</button>
+                    <div class="form-text">1000 x 800px ideal size for hi-res displays</div>
+                  </div>
+                  <div class="mb-3 pb-2">
+                    <label class="form-label" for="unp-product-name">Manga name</label>
+                    <input class="form-control" type="text" id="unp-product-name">
+                    <div class="form-text">Maximum 100 characters. No HTML or emoji allowed.</div>
+                  </div>
+                  <div class="mb-3 py-2">
+                    <label class="form-label" for="unp-product-description">Manga description</label>
+                    <textarea class="form-control" rows="6" id="unp-product-description"></textarea>
+                    <div class="bg-secondary p-3 fs-ms rounded-bottom"><span class="d-inline-block fw-medium me-2 my-1">Markdown supported:</span><em class="d-inline-block border-end pe-2 me-2 my-1">*Italic*</em><strong class="d-inline-block border-end pe-2 me-2 my-1">**Bold**</strong><span class="d-inline-block border-end pe-2 me-2 my-1">- List item</span><span class="d-inline-block border-end pe-2 me-2 my-1">##Heading##</span><span class="d-inline-block">--- Horizontal rule</span></div>
+                  </div>
+                  <div class="mb-3 pb-2">
+                    <label class="form-label" for="unp-standard-price">Start Listing Price</label>
+                    <div class="input-group"><span class="input-group-text"><i class="fa-brands fa-ethereum"></i></span>
+                      <input class="form-control" type="text" id="unp-standard-price">
+                    </div>
+                    <div class="form-text">Average marketplace price for this category is &#926;15.</div>
+                  </div>
+                  <div class="mb-3 pb-2">
+                    <label class="form-label" for="unp-product-files">Manga file for listing</label>
+                    <input class="form-control" type="file" id="unp-product-files">
+                    <div class="form-text">Maximum file size is 25MB</div>
+                  </div>
+                  <button class="btn btn-primary d-block w-100" type="submit"><i class="fas fa-cloud-upload fs-lg me-2"></i>Upload Manga</button>
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
     </template>
     <template id="page-template-account">
 
     </template>
-    <template id="page-template-error">
+    <template id="page-template-error" title="404 Error">
       <div class="container py-5 mb-lg-1">
         <div class="row justify-content-center pt-lg-4 text-center">
           <div class="col-lg-5 col-md-7 col-sm-9">
@@ -250,21 +347,40 @@
                 <i class="fas fa-heart"></i>
               </button>
             </div>
-            <a class="card-img-top d-block overflow-hidden" href="#"><img src="img/coral-main.png" alt="Manga"></a>
-            <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Action</a>
+            <a class="card-img-top d-block overflow-hidden" href="#"><img src="img/logo-dark.png" alt="Manga"></a>
+            <div class="card-body py-2">
+              <a class="product-meta d-block fs-xs pb-1" href="#">Action</a>
               <h3 class="product-title fs-sm"><a href="#">Lorem Ipsum</a></h3>
               <div class="d-flex justify-content-between">
-                <div class="product-price"><span class="text-accent">$198.<small>00</small></span></div>
+                <div class="product-price"><span class="text-success">$198.<small>00</small></span></div>
                 <div class="star-rating"><i class="star-rating-icon fas fa-star-filled active"></i><i class="star-rating-icon fas fa-star-filled active"></i><i class="star-rating-icon fas fa-star-filled active"></i><i class="star-rating-icon fas fa-star-filled active"></i><i class="star-rating-icon fas fa-star-filled active"></i>
                 </div>
               </div>
             </div>
             <div class="card-body card-body-hidden">
-              <button class="btn btn-primary btn-sm d-block w-100 mb-2" type="button"><i class="fas fa-cart fs-sm me-1"></i>Add to Cart</button>
-              <div class="text-center"><a class="nav-link-style fs-ms" href="#quick-view-electro" data-bs-toggle="modal"><i class="fas fa-eye align-middle me-1"></i>Quick view</a></div>
+              <button class="btn btn-success btn-sm d-block w-100 mb-2" type="button"><i class="fas fa-cart fs-sm me-1"></i>Buy Now</button>
+              <div class="text-center">
+                <a class="nav-link-style fs-ms" href="" data-bs-toggle="modal">
+                  <i class="fas fa-eye align-middle me-1"></i> Quick view
+                </a>
+              </div>
             </div>
           </div>
           <hr class="d-sm-none">
+        </div>
+      </div>
+      <div id="page_title" class="page-partial">
+        <div class="page-title-overlap bg-darker pt-4">
+          <div class="container d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-between align-items-center pt-2">
+            <div class="d-flex align-items-center pb-3">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+                  <li class="breadcrumb-item"><a class="text-nowrap" on-click="['navigate', '/']"><i class="fa fa-home"></i>Home</a> &nbsp; &gt; </li>
+                  <li class="breadcrumb-ite text-nowrap ps-3 active" aria-current="page"> {{ title }} </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
     </template>

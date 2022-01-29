@@ -30,18 +30,22 @@ function compile(templateId, data, router) {
 
   const output = document.createElement("div");
   output.id = `mgk-${Math.floor(Math.random() * 100)}`;
+  output.title = template.getAttribute("title");
+
+  if (output.title) {
+    document.title = `${output.title} - MangaKo | NFT Marketplace for Mangas`;
+  }
 
   setTimeout(
     () =>
       Ractive({
         target: `#${output.id}`,
-        template: template.innerHTML.replace("&gt;", ">"),
-        data,
+        template: template.innerHTML.replace(/&gt;/g, ">"),
+        data: Object.assign(output, data),
         partials,
       }).on(
         Object.assign(
           {
-            getId: () => output.id,
             navigate: (_, path) => router.navigate(path),
           },
           sharedMethods

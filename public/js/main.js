@@ -9,7 +9,7 @@ const container = new ContainerRouteRenderer(parent);
 const partials = {};
 
 const sharedData = {
-  sign_in: "Sign In",
+  sign_in: "Sign In"
 };
 
 const sharedMethods = {
